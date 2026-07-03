@@ -38,6 +38,26 @@ Sin servidores. Sin capas. Sin excusas.
 
 ## Instalacion
 
+### Un comando (skill)
+
+```bash
+codex skill install --repo fgpaz/db-cli
+```
+
+### Binario directo (sin Go)
+
+Descarga el zip de tu plataforma desde la [release v1.0.0](https://github.com/fgpaz/db-cli/releases/tag/v1.0.0), descomprime y listo:
+
+```bash
+# Linux
+unzip db-cli_linux_amd64.zip
+chmod +x db-cli
+sudo mv db-cli /usr/local/bin/
+
+# Windows: descomprime y usa directamente
+.\db-cli.exe catalog list
+```
+
 ### Desde fuente (requiere Go 1.23+)
 
 ```bash
@@ -46,9 +66,6 @@ cd db-cli
 go build -o db-cli.exe .
 ```
 
-### Binario precompilado
-
-Descarga el binario desde la [seccion de releases](https://github.com/fgpaz/db-cli/releases).
 
 ### Usar los wrappers (sin compilar)
 
@@ -300,4 +317,7 @@ MIT — ver [LICENSE](LICENSE) para detalles.
 ---
 
 **Hecho con ❤️ en Argentina** — [fg paz](https://github.com/fgpaz)
+
+
+
 
