@@ -1,0 +1,4 @@
+interface:
+  display_name: "DB CLI"
+  short_description: "CLI for PostgreSQL and SQL Server workflows"
+  default_prompt: "Use $db-cli to inspect, query, and explicitly write to configured PostgreSQL or SQL Server connections."
