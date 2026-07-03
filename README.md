@@ -38,64 +38,45 @@ Sin servidores. Sin capas. Sin excusas.
 
 ## Instalacion
 
-### Un comando (skill)
+### Copia y pega esto en tu agente
+
+Pega esta linea en Codex, Claude Code, OpenCode o el harness que uses:
+
+> Lee https://raw.githubusercontent.com/fgpaz/db-cli/main/INSTALL_PROMPT.md y segui las instrucciones para instalar db-cli en mi sistema.
+
+El agente va a:
+
+1. Detectar tu plataforma (Linux/Mac/Windows)
+2. Instalar Go si no lo tenes
+3. Compilar el binario
+4. Preguntarte que base de datos usas y tus credenciales
+5. Crear la configuracion en ~/.db-cli/connections.yaml
+6. Probar la conexion con db-cli probe
+
+**No necesitas saber compilar ni configurar nada.** Solo responde las preguntas del agente.
+
+---
+
+<details>
+<summary>Otras formas de instalar (click para expandir)</summary>
+
+#### Con skill installer
 
 ```bash
 codex skill install --repo fgpaz/db-cli
 ```
 
-### Copia y pega esto en tu agente
+#### Binario precompilado
 
-> Lee https://raw.githubusercontent.com/fgpaz/db-cli/main/INSTALL_PROMPT.md y segui las instrucciones para instalar db-cli en mi sistema.
+Descarga el zip de tu plataforma desde la [release v1.0.0](https://github.com/fgpaz/db-cli/releases/tag/v1.0.0) y descomprime.
 
-Copialo en Codex, Claude Code, OpenCode o el harness que uses. El agente va a:
-
-1. Detectar tu plataforma
-2. Compilar el binario
-3. Preguntarte que base de datos usas
-4. Crear la configuracion
-5. Probar la conexion
-
-### Binario directo (sin Go)
-
-Descarga el zip de tu plataforma desde la [release v1.0.0](https://github.com/fgpaz/db-cli/releases/tag/v1.0.0), descomprime y listo:
+#### Desde fuente
 
 ```bash
-# Linux
-unzip db-cli_linux_amd64.zip
-chmod +x db-cli
-sudo mv db-cli /usr/local/bin/
-
-# Windows: descomprime y usa directamente
-.\db-cli.exe catalog list
+git clone https://github.com/fgpaz/db-cli.git && cd db-cli && go build -o db-cli.exe .
 ```
 
-### Desde fuente (requiere Go 1.23+)
-
-```bash
-git clone https://github.com/fgpaz/db-cli.git
-cd db-cli
-go build -o db-cli.exe .
-```
-
-
-### Usar los wrappers (sin compilar)
-
-Si ya tenes los binarios en `bin/`, usa los wrappers:
-
-```powershell
-# Windows PowerShell
-.\scripts\db-cli.ps1 catalog list
-
-# Linux
-./scripts/db-cli.sh catalog list
-
-# Windows CMD
-.\scripts\db-cli.cmd catalog list
-```
-
-Los wrappers buscan automaticamente un archivo `infra/.env` cercano y cargan las variables de entorno.
-
+</details>
 ## Configuracion
 
 ### Catalogo de conexiones
@@ -329,6 +310,8 @@ MIT — ver [LICENSE](LICENSE) para detalles.
 ---
 
 **Hecho con ❤️ en Argentina** — [fg paz](https://github.com/fgpaz)
+
+
 
 
 
