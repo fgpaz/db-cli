@@ -44,6 +44,18 @@ Sin servidores. Sin capas. Sin excusas.
 codex skill install --repo fgpaz/db-cli
 ```
 
+### Copia y pega esto en tu agente
+
+> Lee https://raw.githubusercontent.com/fgpaz/db-cli/main/INSTALL_PROMPT.md y segui las instrucciones para instalar db-cli en mi sistema.
+
+Copialo en Codex, Claude Code, OpenCode o el harness que uses. El agente va a:
+
+1. Detectar tu plataforma
+2. Compilar el binario
+3. Preguntarte que base de datos usas
+4. Crear la configuracion
+5. Probar la conexion
+
 ### Binario directo (sin Go)
 
 Descarga el zip de tu plataforma desde la [release v1.0.0](https://github.com/fgpaz/db-cli/releases/tag/v1.0.0), descomprime y listo:
@@ -317,6 +329,7 @@ MIT — ver [LICENSE](LICENSE) para detalles.
 ---
 
 **Hecho con ❤️ en Argentina** — [fg paz](https://github.com/fgpaz)
+
 
 
 
