@@ -1,0 +1,37 @@
+# Binaries
+bin/db-cli
+bin/db-cli.exe
+bin/windows-amd64/db-cli.exe
+bin/windows-arm64/db-cli.exe
+bin/linux-amd64/db-cli
+bin/linux-arm64/db-cli
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.work.sum
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files (never commit secrets)
+.env
+.env.*
+infra/.env
+infra/.env.*
+
+# db-cli catalog (may contain inline secrets)
+.db-cli/

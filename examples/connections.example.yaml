@@ -1,0 +1,49 @@
+# db-cli connections example
+# Copy to ~/.db-cli/connections.yaml (global) or infra/db-cli.connections.yaml (project overlay)
+# NEVER commit real credentials. Use environment variables.
+
+version: 1
+connections:
+  # PostgreSQL read-only connection
+  app-read:
+    engine: postgres
+    host_env: PGHOST
+    port_env: PGPORT
+    database_env: PGDATABASE
+    user_env: PGUSER
+    password_env: PGPASSWORD
+    default_database: myapp
+    default_schema: public
+    vector: auto
+    write_policy: never
+    tags:
+      - local
+      - read-only
+
+  # PostgreSQL writable connection
+  app-write:
+    engine: postgres
+    host_env: PGHOST
+    port_env: PGPORT
+    database_env: PGDATABASE
+    user_env: PGUSER
+    password_env: PGPASSWORD
+    default_database: myapp
+    default_schema: public
+    vector: auto
+    write_policy: explicit
+    tags:
+      - local
+      - writable
+
+  # SQL Server read-only via DSN env var
+  reporting-read:
+    engine: sqlserver
+    dsn_env: REPORTING_DSN
+    default_database: reports
+    default_schema: dbo
+    application_intent: ReadOnly
+    write_policy: never
+    tags:
+      - sqlserver
+      - read-only
